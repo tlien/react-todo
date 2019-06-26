@@ -4,16 +4,41 @@
 
 .Todo {
   padding: 20px;
-  background-color: #fff;
   margin: 10px 0px 10px 0px;
-  max-width: 50%;
+  max-width: 100%;
   border-radius: 2px;
   cursor: pointer;
+}
+
+.task-container {
+  flex: 3;
+}
+
+.deadline-container {
+  margin-right: 25px;
+  margin-left: 25px;
+}
+
+.finished-icon {
+  color: #78f89f;
+}
+
+.not-finished-icon {
+  color: slategray;
+}
+
+.finished {
+  background-color: #78f89f;
+}
+
+.not-finished {
+  background-color: #fff;
 }
 
 .Flex-space {
   display: flex;
   justify-content: space-between;
+  flex-flow: row nowrap;
 }
 
 .Times {
@@ -25,12 +50,23 @@
 }
 
 .TodoInput {
+  min-width: 400px;
+  min-height: 32px;
   padding: 12px;
   border: 1px solid black;
-  transition: all 0.25s;
+  transition: all 0.1s;
 }
 
-.TodoInput:hover {
+.DateInput {
+  min-width: 200px;
+  min-height: 32px;
+  padding: 12px;
+  border: 1px solid black;
+  transition: all 0.1s;
+}
+
+.TodoInput:hover,
+.DateInput:hover {
   border: 1px solid #fff;
 }
 
@@ -39,16 +75,17 @@
 }
 
 .SubmitButton {
-  padding: 12px;
+  min-height: 58px;
+  min-width: 75px;
   color: #fff;
   background-color: slategray;
   border: 1px solid black;
   cursor: pointer;
-  transition: all 0.25s;
+  transition: all 0.1s;
 }
 
 .SubmitButton:hover {
-  border: 1px solid white;
+  border: 1px solid slategray;
 }
 
 .Todo:hover {

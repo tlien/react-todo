@@ -1,7 +1,7 @@
 .modal {
-  display: absolute;
-  top: 50%;
-  left: 50%;
+  position: fixed;
+  top: 40%;
+  left: 35%;
   width: 500px;
   background: white;
   border: 1px solid #ccc;
@@ -32,20 +32,31 @@
     offset-path: none;
   }
   h2 {
-    border-bottom: 1px solid #ccc;
     padding: 1rem;
     margin: 0;
   }
+
+  .modal-header {
+    border-bottom: 1px solid #ccc;
+  }
+
+  .finish-todo {
+    font-size: 2em;
+    padding: 1rem;
+  }
+
   .content {
     padding: 1rem;
   }
+
   .actions {
     border-top: 1px solid #ccc;
     background: #eee;
     padding: 0.5rem 1rem;
     button {
       border: 0;
-      background: #78f89f;
+      background: slategray;
+      color: #fff;
       border-radius: 5px;
       padding: 0.5rem 1rem;
       font-size: 0.8rem;

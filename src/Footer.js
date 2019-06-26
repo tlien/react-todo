@@ -1,27 +1,35 @@
-import React from "react";
+import React, { useState } from "react";
 
-const footerStyle = {
-  backgroundColor: "black",
-  color: "#fff",
-  minHeight: "40px",
-  padding: "50px 300px 50px 300px",
-  display: "flex",
-  justifyContent: "space-between"
+const Footer = props => {
+  const [currentPicture, setCurrentPicture] = useState({});
+
+  const getNewPicture = () => {
+    var random = Math.floor(Math.random() * 1500) + 1;
+    fetch("https://xkcd.now.sh/" + random)
+      .then(response => response.json())
+      .then(json =>
+        setCurrentPicture({ url: json.img, title: json.title, alt: json.alt })
+      );
+  };
+
+  const buttonStyle = {
+    padding: "10px",
+    backgroundColor: "slategray",
+    color: "#fff"
+  };
+
+  return (
+    <div>
+      <h1>Comic of the day</h1>
+      <button style={buttonStyle} onClick={getNewPicture}>
+        Refresh
+      </button>
+      <br />
+      <br />
+      <img src={currentPicture.url} alt={currentPicture.alt} />
+      <div>{currentPicture.title}</div>
+    </div>
+  );
 };
-
-class Footer extends React.Component {
-  render() {
-    return (
-      <footer style={footerStyle}>
-        <p>This is a paragraph</p>
-        <img
-          src="https://via.placeholder.com/100/0000FF/808080 ?Text=Todo-App"
-          alt=""
-        />
-        <p>Test flexbox</p>
-      </footer>
-    );
-  }
-}
 
 export default Footer;
